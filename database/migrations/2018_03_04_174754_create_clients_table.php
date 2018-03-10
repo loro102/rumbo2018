@@ -19,17 +19,17 @@ class CreateClientsTable extends Migration
             $table->string('nombre', 100);
             $table->string('apellidos',100);
             $table->string('nif');
-            $table->string('direccion',255);
-            $table->string('codigopostal');
-            $table->string('localidad', 100);
-            $table->string('provincia',100);
-            $table->date('fechanacimiento');
-            $table->string('telefono1',50);
-            $table->string('telefono2',50);
-            $table->string('movil');
-            $table->string('email',100);
-            $table->string('iban',100);
-            $table->text('nota');
+            $table->string('direccion',255)->nullable();
+            $table->string('codigopostal')->nullable();
+            $table->string('localidad', 100)->nullable();
+            $table->string('provincia',100)->nullable();
+            $table->date('fechanacimiento')->nullable();
+            $table->string('telefono1',50)->nullable();
+            $table->string('telefono2',50)->nullable();
+            $table->string('movil')->nullable();
+            $table->string('email',100)->nullable();
+            $table->string('iban',100)->nullable();
+            $table->text('nota')->nullable();
             $table->uuid('user');
             $table->foreign('user')->references('id')->on('users');
 

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use function auth;
+
 use Illuminate\Foundation\Http\FormRequest;
 
 class ClientRequest extends FormRequest
@@ -22,19 +23,30 @@ class ClientRequest extends FormRequest
      *
      * @return array
      */
+
+
+
     public function rules()
     {
+
         return [
             //
             'nombre'=>'required',
             'apellidos'=>'required',
-            'nif'=>'required|Nif&&Cif',
+            'nif'=>'required|CiNif',
             'direccion'=>'nullable',
             'codigopostal'=>'nullable',
             'localidad'=>'nullable',
             'provincia'=>'nullable',
             'fechanacimiento'=>'nullable|dateformat:Y-m-d',
-            'telefono1'=>'nullable|'
+            'country'=>'ES',
+            'telefono1'=>'nullable|phone:ES',
+            'telefono2'=>'nullable|phone:ES',
+            'movil'=>'nullable|phone:ES,mobile',
+            'email'=>'nullable|email',
+            'iban'=>'nullable|iban',
+            'nota'=>'nullable'
         ];
     }
+
 }

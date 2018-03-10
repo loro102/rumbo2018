@@ -67,5 +67,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/plugins/jquery.mask.min.js') }}"></script>
+    <script src="{{ asset('js/unmask.js') }}"></script>
+
+
 </body>
 </html>

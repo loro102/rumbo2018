@@ -15,6 +15,10 @@ use function view;
 
 class ClientController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -23,6 +27,7 @@ class ClientController extends Controller
     public function index()
     {
         //
+
 
         $clientes= (new Client)->orderBy('apellidos','ASC')
             ->orderBy('nombre','ASC')
@@ -89,9 +94,14 @@ class ClientController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Client $client)
+    public function update(ClientRequest  $client)
     {
         //
+        //dd($client->id);
+        $cliente=Client::findOrFail($client->id);
+        $cliente->fill($client->input())->save();
+
+        return back()->with('message',['success',__('Cliente editado correctamente')]);
     }
 
     /**

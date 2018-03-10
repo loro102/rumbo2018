@@ -150,6 +150,8 @@ return [
         /*
          * Package Service Providers...
          */
+        //Intervention\Validation\ValidationServiceProviderLaravel5::class,
+        loro102\IsoCodesValidation\IsoCodesValidationServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -161,7 +163,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Emadadly\LaravelUuid\LaravelUuidServiceProvider::class,
-        Pixelpeter\IsoCodesValidation\IsoCodesValidationServiceProvider::class,
+
+
 
     ],
 

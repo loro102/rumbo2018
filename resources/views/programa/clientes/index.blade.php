@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+        <h1 class="text-center">Clientes</h1>
         <div class="row">
             @include('partials.programa.messages')
             @include('partials.programa.errors')
@@ -30,16 +31,16 @@
                                         <div class="form-group col-6">
                                             <label for="nombre">{{__('Nombre')}}</label>
                                             <input id="nombre" class="form-control" name="nombre"
-                                                   value="{{old('nombr6')}}">
+                                                   value="{{old('nombre')}}">
                                         </div>
-                                        <div class="form-group col-5">
+                                        <div class="form-group col-6">
                                             <label for="apellidos">{{__('Apellidos')}}</label>
                                             <input id="apellidos" class="form-control" name="apellidos"
                                                    value="{{old('apellidos')}}">
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="nif">{{__('Nif')}}</label>
-                                            <input id="nif" class="form-control" name="nif" value="{{old('nif')}}">
+                                            <input id="nif" class="form-control" name="nif" value="{{old('nif')}}" data-toggle="tooltip" data-placement="right" data-html="true" title="Solo numeros y letras con el siguiente formato: <br/> NIF: 97350797P <br/>NIE:Z1537528Y <br/>CIF:G69244820 o Q9591614D">
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="fechanacimiento">{{__('Fecha de nacimiento')}}</label>
@@ -70,19 +71,19 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-4">
-                                            <label for="telefono1">{{__('Telefono 1')}}</label>
+                                            <label for="telefono1">{{__('Telefono')}}</label>
                                             <input id="telefono1" class="form-control" name="telefono1"
-                                                   value="{{old('telefono1')}}">
+                                                   value="{{old('telefono1')}}" data-mask="000 000 000">
                                         </div>
                                         <div class="form-group col-4">
-                                            <label for="telefono2">{{__('Telefono 2')}}</label>
+                                            <label for="telefono2">{{__('Telefono alternativo')}}</label>
                                             <input id="telefono2" class="form-control" name="telefono2"
-                                                   value="{{old('telefono2')}}">
+                                                   value="{{old('telefono2')}}" data-mask="000 000 000">
                                         </div>
                                         <div class="form-group col-4">
                                             <label for="movil">{{__('Movil')}}</label>
                                             <input id="movil" class="form-control" name="movil"
-                                                   value="{{old('movil')}}">
+                                                   value="{{old('movil')}}" data-mask="000 000 000">
                                         </div>
                                         <div class="form-group col-4">
                                             <label for="email">{{__('Correo electrónico')}}</label>
@@ -105,13 +106,9 @@
                                     </div>
 
                                     <button type="submit" name="addForum"
-                                            class="btn btn-default">{{__('Añadir Cliente Nuevo')}}</button>
+                                            class="btn btn-block btn-primary">{{__('Añadir Cliente Nuevo')}}</button>
                                 </div>
                             </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Send message</button>
                         </div>
                     </div>
                 </div>

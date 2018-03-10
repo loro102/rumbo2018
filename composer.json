@@ -9,11 +9,14 @@
         "barryvdh/laravel-ide-helper": "^2.4",
         "emadadly/laravel-uuid": "^1.2",
         "fideloper/proxy": "~4.0",
+        "igorescobar/jquery-mask-plugin": "^1.14",
         "intervention/validation": "^1.2",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.6",
-        "pixelpeter/laravel5-isocodes-validation": "^2.0"
+        "loro102/isocodesvalidation": "dev-master",
+        "lucasvdh/laravel-iban": "dev-master",
+        "propaganistas/laravel-phone": "^4.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",
@@ -63,4 +66,5 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true
+    
 }
