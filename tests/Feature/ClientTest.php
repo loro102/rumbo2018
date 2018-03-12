@@ -87,7 +87,7 @@ class ClientTest extends TestCase
             ->assertSessionHasErrors(['nif']);
 
         //verifica que el nif no es válido
-        $this->clients->nif='10002112X';
+        $this->clients->nif='10002112P';
         $response=$this->post('/clientes',$this->clients->toArray());
         $response
             ->assertStatus(302)
@@ -105,6 +105,8 @@ class ClientTest extends TestCase
 
 
         $response=$this->post('/clientes/',$this->clients->toArray());
+
+
         $response
             ->assertStatus(302)
             ->assertSee('clientes')
