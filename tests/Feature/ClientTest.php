@@ -94,7 +94,6 @@ class ClientTest extends TestCase
             ->assertSee('clientes')
             //->assertSessionHasErrors('nif')
             ->assertSessionHas('message',['success',__('Cliente creado correctamente')]);
-        $this->dump();
 
 
 
