@@ -23,7 +23,9 @@ class ClientTest extends TestCase
 
     }
 
-    /** @test */
+    /** @test
+     * Test que verifica que los que no son usuarios no pueden navegar en clientes
+     */
     public function Nadie_puede_navegar_clientes()
 {
     $this->withExceptionHandling();
@@ -38,7 +40,9 @@ class ClientTest extends TestCase
 
 }
 
-    /** @test */
+    /** @test
+     * Test que verifica que solo los usuarios pueden navegar en clientes
+     **/
     public function Usuario_puede_navegar_clientes()
     {
         //$this->withExceptionHandling();
@@ -52,9 +56,12 @@ class ClientTest extends TestCase
 
     }
 
-    /** @test */
+    /** @test
+     * Test que verifica que el usuario puede crear un cliente
+     **/
     public function Usuario_puede_crear_clientes()
     {
+        //Verifica que salta mensaje de error en caso de que los campos estén vacios
         $this->users=factory(User::class)->create();
         $this->withExceptionHandling();
         $this->signIn();
@@ -79,7 +86,16 @@ class ClientTest extends TestCase
             ->assertStatus(302)
             ->assertSessionHasErrors(['nif']);
 
+        //verifica que el nif no es válido
+        $this->clients->nif='10002112X';
+        $response=$this->post('/clientes',$this->clients->toArray());
+        $response
+            ->assertStatus(302)
+            ->assertSessionHasErrors(['nif']);
 
+
+
+        //Verifica que los campos obligatorios son correctos y válidos, y además devuelva el mensaje de cliente creado.
         $this->client = factory(Client::class)->create([
             'nombre' => 'Abigail',
             'apellidos'=> 'Pestaña Rota',
